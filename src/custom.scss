@@ -1,0 +1,415 @@
+$body-bg: #fdfdfd;
+$primary: #2b0a57;
+$secondary: #f8f5fc;
+$bw: #413c3c;
+$roy: #2B0A57;
+$grey: #E9E9E9;
+$grey-3: #9C9C9C;
+$secondary-blue: #5948AD;
+$grey-4: #DEDEDE;
+$error: #EB5757;
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
+
+body {
+  color: $bw;
+}
+
+.continue, .continue:hover:focus:active {
+  background-color: $primary !important;
+  color: $body-bg !important;
+  width: 100%;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 8px;
+}
+
+.continue:hover {
+  color: $body-bg;
+}
+
+.container {
+  max-width: 800px;
+}
+
+#app {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#loan-application {
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#loan {
+  font-weight: 300;
+  font-size: 1rem;
+}
+#months {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+#user-data {
+  border: 5px solid #f3eefb;
+}
+.text-bw {
+  color: $bw;
+}
+.small {
+  font-size: 14px;
+}
+.rounded-xl {
+  border-radius: 2rem;
+}
+.form-control,
+.custom-select {
+  border: 1px solid $grey;
+  color: #413c3c;
+  font-weight: 300;
+  background-color: unset;
+  height: auto;
+}
+.text-divider {
+  margin: 2em auto;
+  line-height: 0;
+  text-align: center;
+  width: 90%;
+  border: 1px;
+}
+.text-divider span {
+  background-color: $body-bg;
+  padding: 0px 4em;
+  font-size: 14px;
+  color: #dedede;
+}
+.text-divider:before {
+  content: " ";
+  display: block;
+  border-top: 1px solid $grey;
+}
+
+.form-control, .custom-select {
+  padding: 12px 12px;
+}
+
+.btn-secondary, .btn-secondary:hover {
+  background-color: $body-bg;
+}
+
+//FORM
+form label {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transition: all 0.4s ease;
+  color: #413c3c;
+  font-weight: 300;
+  z-index: -999;
+}
+
+.form-control {
+  &:focus, &.hasValue {
+    ~ label {
+      transform: translateY(-23px) translateX(-5px);
+      font-size: 14px;
+      font-weight: 400;
+      background-color: $body-bg;
+      padding: 0px 4px;
+      z-index: 999 !important;
+    }
+  }
+}
+
+.form-control:focus, .custom-select:focus {
+  border: 1px solid $roy;
+  box-shadow: none;
+}
+
+.form-control:disabled {
+  color: $grey-3;
+  background-color: unset;
+  ~ label {
+    color: $grey-3;
+  } 
+}
+
+.small-input{
+  top: 13px;
+  left: 13px;
+}
+
+.needs-value {
+  border: 1px solid $roy !important;
+}
+
+//Transition animation
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+//Modal
+
+.modal-header, .modal-footer{
+  border: 0px;
+}
+
+.modal-btn, .modal-btn:hover, .modal-content {
+  background-color: $body-bg;
+  border: 0px;
+}
+
+#modal-1 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.modal.show .modal-dialog {
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-backdrop {
+  background-color: white;
+}
+
+body.modal-open #app{
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+
+//Checkboxes
+.custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $success;
+  box-shadow: none !important;
+}
+
+.custom-switch .custom-control-input:not(:checked) ~ .custom-control-label::after {
+  background-color: white;
+}
+
+.custom-switch .custom-control-label::before {
+  background-color: $grey-3;
+  box-shadow: none !important;
+  border: 0px !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $body-bg;
+  border: 1px solid $secondary-blue;
+  box-shadow: none;
+}
+
+.custom-control-input:not(:checked) ~ .custom-control-label::before {
+  box-shadow: none;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url('./assets/icons/check.png');
+}
+
+//Dropdown icon
+.custom-select {
+  background-image: url('./assets/icons/dropdown.png');
+  background-size: auto;
+}
+
+//Loan application form
+
+.loan-application .form-control {
+  border: 0px;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+  color: $body-bg;
+  padding: 0px 5px;
+  margin: 0px 5px;
+  background-color: $primary;
+  border-radius: 0px !important;
+  font-weight: 400 !important;
+}
+
+.input-group {
+  height: fit-content;
+  width: 80px;
+  border-bottom: 1px solid $grey-4;
+}
+
+.client-input {
+  height: fit-content;
+  width: 150px;
+  border-bottom: 1px solid $grey-4;
+  border: 0px;
+  border-bottom-width: 0px;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  border-bottom: 1px solid $grey-3;
+  border-radius: 0;
+}
+
+.client-input:focus {
+  border: 0px;
+  border-bottom-width: 0px;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  background-color: $secondary;
+}
+
+.client-input:hover, .client-input:focus {
+  border-bottom: 1px solid $primary;
+}
+
+#monthlyPayment {
+  background-color: #3a156c;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.amount-dropdown, .duration-dropdown {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 1;
+  max-height: 150px;
+  width: 150px;
+  overflow: scroll;
+  background-color: white;
+  padding: 0px 10px;
+}
+
+.duration-dropdown {
+  right: inherit !important;
+  top: 33px;
+}
+
+.minMax {
+  border-bottom: 1px solid $bw;
+}
+
+.tiny {
+  font-size: 10px;
+}
+
+.input-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.input-dropdown ul {
+  list-style: none;
+  text-align: center;
+  padding-left: 0px;
+  color: $bw;
+  cursor: pointer;
+}
+
+.error {
+  color: $error;
+}
+
+#loan-button {
+  background-color: $body-bg;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#client-save-button {
+  background-color: $primary;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#loan-button img, #client-button img, #client-save-button img{
+  margin: auto;
+}
+
+#loan-button:hover {
+  -webkit-box-shadow: 0px 0px 25px 4px #5948AD;
+  -moz-box-shadow: 0px 0px 25px 4px #5948AD;
+  box-shadow: 0px 0px 25px 4px #5948AD;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#client-button:hover {
+  background-color: $body-bg;
+  transition: background-color 0.3s ease-in-out;
+  img {
+    content: url('./assets/icons/rightArrowDark.png');
+  }
+}
+
+#client-save-button:hover {
+  background-color: $body-bg;
+  transition: background-color 0.3s ease-in-out;
+  img {
+    content: url('./assets/icons/rightArrowDark.png');
+  }
+}
+
+.edit-client:hover {
+  background-color: $primary;
+  border: 0px;
+  img {
+    content: url('./assets/icons/pencil-light.png');
+  }
+}
+
+//responsive
+@media screen and (max-width: 600px) {
+  #app {
+    padding: 0px 4%
+  }
+  .logo-div {
+    text-align: left !important;
+  }
+  #loan-info {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+  }
+  #loan-application {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #loan-form {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  #user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #client-form {
+    gap: 15px
+  }
+  #client-form-label {
+    align-items: center !important;
+  }
+  #client-form-inputs {
+    padding-left: 0px;
+  }
+  #client-form-button {
+    justify-content: center !important;
+  }
+}
