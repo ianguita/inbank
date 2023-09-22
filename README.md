@@ -4,7 +4,9 @@
 ### Stack
 
 Vue 2.7.14
+
 Bootstrap 4.6.2
+
 Bootstrap-Vue 2.23.1
 
 ### File Structure
@@ -37,8 +39,13 @@ Bootstrap-Vue 2.23.1
 
 ### Improvements
 Import icons as SVG.
+
 Unify CSS and Assets names.
+
 Divide SCSS file in different ones depending on the application.
+
 Map SCSS variables to Bootstrap ones
+
 Divide Store in different ones.
+
 Form data validation
